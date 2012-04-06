@@ -1,5 +1,6 @@
 package com.fr4gus.android.oammblo.ui;
 
+import android.content.Intent;
 import com.fr4gus.android.oammblo.R;
 
 import android.os.Bundle;
@@ -16,6 +17,14 @@ public class SplashActivity extends OammbloActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+              //do nothing
+        }
+        Intent loginIntent = new Intent(SplashActivity.this, LoginActivity.class);
+        startActivity(loginIntent);
+        finish();
     }
 
 }

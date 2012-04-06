@@ -2,5 +2,9 @@
 <resources>
 
     <string name="app_name">OAMMBLO</string>
-
+    <!--LOGIN SCREEN-->
+    <string name="login_welcome_text">Ingresar a OAMMBLO</string>
+    <string name="login_username">USERNAME</string>
+    <string name="login_password">PASSWORD</string>
+    <string name="login_button">LOGIN</string>
 </resources>
