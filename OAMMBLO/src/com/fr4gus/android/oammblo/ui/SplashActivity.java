@@ -17,14 +17,27 @@ public class SplashActivity extends OammbloActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-              //do nothing
-        }
-        Intent loginIntent = new Intent(SplashActivity.this, LoginActivity.class);
-        startActivity(loginIntent);
-        finish();
+
+        Thread splashThread = new Thread()
+        {
+          @Override
+          public void run()
+          {
+              try {
+                  sleep(2000);
+              } catch (InterruptedException e) {
+                  e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+              }
+              finally {
+                  finish();
+                  Intent loginIntent = new Intent(SplashActivity.this, LoginActivity.class);
+                  startActivity(loginIntent);
+              }
+
+          }
+
+        };
+        splashThread.start();
     }
 
 }
